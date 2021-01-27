@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="702dc5ea-86b2-48e1-8174-32864d9668cb" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1n9VrgSHJZo4E6fkZGbbf10SZWs" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Thermodynamics_data_handbook-main" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="702dc5ea-86b2-48e1-8174-32864d9668cb" name="Default Changelist" comment="" />
+      <created>1610802493126</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1610802493126</updated>
+      <workItem from="1610802494668" duration="289000" />
+      <workItem from="1610802898893" duration="12995000" />
+      <workItem from="1610949887764" duration="12572000" />
+      <workItem from="1611058592063" duration="80000" />
+      <workItem from="1611112691218" duration="2949000" />
+      <workItem from="1611122008967" duration="5086000" />
+      <workItem from="1611140170030" duration="1565000" />
+      <workItem from="1611153112393" duration="931000" />
+      <workItem from="1611157084148" duration="14695000" />
+      <workItem from="1611198963562" duration="5231000" />
+      <workItem from="1611634520381" duration="840000" />
+      <workItem from="1611653338386" duration="12199000" />
+      <workItem from="1611667692727" duration="5692000" />
+      <workItem from="1611675169195" duration="5331000" />
+      <workItem from="1611733066009" duration="1744000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1611653865899">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1611653865899" />
+    <state x="727" y="5" width="677" height="803" key="dock-window-1" timestamp="1611119839550">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="727" y="5" width="677" height="803" key="dock-window-1/0.0.1536.824@0.0.1536.824" timestamp="1611119839550" />
+  </component>
+</project>

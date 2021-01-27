@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="graph.ob.js"></script>
+
+    <script src="graph_multiline_use.ob.js"></script>
+</head>
+<body>
+    plot x^2-4x+4
+    plot circle
+    <div id="l1" style="width:550px;height:400px"></div>
+    <script>
+        var datapoints1 = [];
+        datapoints1.push({ x: 1, y: 1 });
+        datapoints1.push({ x: 2, y: 1 });
+        datapoints1.push({ x: 2, y: 2 });
+        datapoints1.push({ x: 1, y: 2 });
+        datapoints1.push({ x: 1, y: 1 });
+        var datapoints2 = [];
+        datapoints2.push({ x: 1, y: 1 });
+        datapoints2.push({ x: 2, y: 2 });
+        datapoints2.push({ x: 3, y: 3 });
+        datapoints2.push({ x: 4, y: 4 });
+        datapoints2.push({ x: 5, y: 5 });
+
+        var data = [];
+        data.push({
+            type: "spline",
+            xValueType: "Float",
+            showInLegend: true,
+            name: "f(x)",
+            markerSize: 1,
+            dataPoints: datapoints1
+        })
+                                
+        data.push({
+            type: "spline",
+            xValueType: "Float",
+            showInLegend: true,
+            name: "f(x1)",
+            markerSize: 1,
+            dataPoints: datapoints2
+        })                 
+
+        graphline("l1", data, "x axis", "y-axis");
+
+    </script>
+    
+</body>
+</html>

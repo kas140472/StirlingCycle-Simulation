@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="graph.ob.js"></script>
+
+    <script src="graph_multiline_use.ob.js"></script>
+</head>
+<body>
+
+<div id="l1" style="width:550px;height:400px"></div>
+<script>
+    var datapoints1 = [];
+    var datapoints2 = [];
+    var datapoints3 = [];
+    var datapoints4 = [];
+    let v1 = 4;
+    let v2 = 6;
+    let R = 8.314;
+    let P1 = 0.5;
+    let P3 = 0.2;
+    let gamma = 1.667;
+
+    P2 = P1*v1/v2;
+    v3 = Math.pow(P2/P3, 1/gamma)*v2;
+    v4 = Math.pow(P1*Math.pow(v1, gamma)/(P3*v3), 1/(gamma-1));
+    P4 = P1*Math.pow(v1/v4, gamma);
+    T1 = P1*v1/R;
+
+//ab 1st
+    for(i=v1;i<=v2;i++) {
+        datapoints1.push({x: i, y: (P1*v1) / i});
+    }
+
+    //bc 2nd
+    //for(j = Math.pow(T2/T1, 1/(gamma-1))*v2; j<=v2; j++) {
+    for(j=v2; j<=v3; j++){
+        datapoints2.push({x: j, y: P2*Math.pow(v2, gamma)/Math.pow(j,gamma)});
+    }
+
+    //cd 3rd
+    for(k=v4; k<=v3; k++){
+        datapoints3.push({ x: k, y: (P3*v3)/k });
+    }
+
+//da 4th
+    //for(m=2; m<=Math.pow(T1/T2, 1/(gamma-1))*v1; m++){
+    for(m=v1; m<=v4; m++){
+        datapoints4.push({ x: m , y: P1*Math.pow(v1, gamma)/Math.pow(m,gamma)});
+    }
+
+    var data = [];
+    data.push({
+        type: "spline",
+        xValueType: "Float",
+        showInLegend: true,
+        name: "Isothermal Heat Addition",
+        markerSize: 1,
+        dataPoints: datapoints1
+    })
+
+    data.push({
+        type: "spline",
+        xValueType: "Float",
+        showInLegend: true,
+        name: "Isentropic Expansion",
+        markerSize: 1,
+        dataPoints: datapoints2
+    })
+    data.push({
+        type: "spline",
+        xValueType: "Float",
+        showInLegend: true,
+        name: "Isothermal Heat Removal",
+        markerSize: 1,
+        dataPoints: datapoints3
+    })
+    data.push({
+        type: "spline",
+        xValueType: "Float",
+        showInLegend: true,
+        name: "Isentropic Compression",
+        markerSize: 1,
+        dataPoints: datapoints4
+    })
+
+    graphline("l1", data, "Volume (m<sup>3</sup> / mol)", "Pressure (kPa)");
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    
+    <script src="graph.ob.js"></script>
+    <script src="graph_use.ob.js"></script>
+    <script src="graph_use2.ob.js"></script>
+</head>
+<body>
+    <table style="width:100%">
+        <tr>
+            <td>
+                <div id="l1" style="width:600px;height:500px"></div>
+            </td>
+            <td>
+                <div id="l2" style="width:600px;height:500px"></div>
+            </td>
+        </tr>
+    </table>
+    
+    
+    <input type="button" onclick="draw1();" value="draw garph 2" />
+    <script>
+        var datapoints1 = [];
+        var datapoints2 = [];
+        for(i=1;i<=10;i++)
+        {
+            datapoints1.push({ x: i, y: i * i });
+            datapoints2.push({ x: i, y: i * i + i });
+        }
+        drawgraph("l1", datapoints1, "x values", "x^2");
+
+        function draw1()
+        {
+            drawgraph2("l2", datapoints1, datapoints2, "X-axis", "Y-axis","comparision","x^2","x^2+x");
+        }
+    </script>
+</body>
+</html>

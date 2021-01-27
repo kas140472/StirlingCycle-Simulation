@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="graph.ob.js"></script>
+    <script src="graph_logymulti_use.ob.js"></script>
+</head>
+<body>
+    <div id="log" style="width:600px;height:500px"></div>
+    <script>
+        var data1 = [];
+        data1.push({ x: 10, y: 10 });
+        
+        data1.push({ x: 15, y: 640 });
+        data1.push({ x: 22, y: 10240 });
+        data1.push({ x: 31, y: 80240 });
+        data1.push({ x: 42, y: 162400 });
+        data1.push({ x: 55, y: 200000 });
+        data1.push({ x: 70, y: 220000 });
+        data1.push({ x: 87, y: 230000 });
+        data1.push({ x: 100, y: 256000 });
+        
+        
+        var data2 = [];
+        data2.push({ x: 10, y: 10 });
+        
+        data2.push({ x: 15, y: 840 });
+        data2.push({ x: 22, y: 15240 });
+        data2.push({ x: 31, y: 99240 });
+        data2.push({ x: 42, y: 202400 });
+        data2.push({ x: 55, y: 300000 });
+        data2.push({ x: 70, y: 330000 });
+        data2.push({ x: 87, y: 400000 });
+        data2.push({ x: 100, y: 456000 });
+
+        var data=[];
+        data.push({type:"line",dataPoints:data1});
+        data.push({type:"line",dataPoints:data2});
+        logymultiple("Loggraph","X axis","Y-axis",data,log)        
+    </script>
+</body>
+</html>

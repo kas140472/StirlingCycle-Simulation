@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="graph.ob.js"></script>
+
+    <script src="graph_multiline_use.ob.js"></script>
+</head>
+<style>
+    div{
+        display: inline-block;
+        margin-right: 20px;
+    }
+    td{
+        border: 1px solid black;
+        padding: 2px;
+        text-align: justify;
+        font-size: 16px;
+
+    }
+    table, h4{
+        font-family:"verdana"
+
+    }
+</style>
+<body>
+
+<div id="l1" style="width:550px;height:400px"></div>
+<div style="display: inline-block">
+    <div>
+        <h4>Line 1 points</h4>
+        <table style="border: 1px solid black;">
+            <thead>
+            <th>Volume(m^3)</th>
+            <th>Pressure(kpa)</th>
+            </thead>
+            <tbody id="line1">
+            </tbody>
+        </table>
+    </div>
+    <div>
+        <h4>Line 2 points</h4>
+        <table style="border: 1px solid black;">
+            <thead>
+            <th>Volume(m^3)</th>
+            <th>Pressure(kpa)</th>
+            </thead>
+            <tbody id="line2">
+            </tbody>
+        </table>
+    </div>
+    <div>
+        <h4>Line 3 points</h4>
+        <table style="border: 1px solid black;">
+            <thead>
+            <th>Volume(m^3)</th>
+            <th>Pressure(kpa)</th>
+            </thead>
+            <tbody id="line3">
+            </tbody>
+        </table>
+    </div>
+    <div>
+        <h4>Line 4 points</h4>
+        <table style="border: 1px solid black;">
+            <thead>
+            <th>Volume(m^3)</th>
+            <th>Pressure(kpa)</th>
+            </thead>
+            <tbody id="line4">
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script>
+    var datapoints1 = [];
+    var datapoints2 = [];
+    var datapoints3 = [];
+    var datapoints4 = [];
+    let v1 = 2;
+    let v2 = 6;
+    let t1 = 350;
+    let t2 = 500;
+    let gamma = 1.667;
+
+    // for(i = 2; i<=15; i++){
+    //     datapoints1.push({ x: i, y: (8.314 * t1)/i });
+    // }
+    // for(i = 10; i<=55; i++){
+    //     datapoints2.push({ x: i, y: (8.314*t2*(Math.pow(v2,(gamma - 1))))/(Math.pow(i, gamma))});
+    // }
+    // for(i = 0; i<=100; i++){
+    //     datapoints3.push({ x: i, y: (8.314 * t2)/i });
+    // }
+    // for(i = 10; i<=100; i++){
+    //     datapoints4.push({ x: i, y: (8.314*t1*(Math.pow(v1,(gamma - 1))))/(Math.pow(i, gamma))});
+    // }
+
+
+
+
+    for(i=v1;i<=Math.pow(t2/t1, 1/(gamma-1))*v2;i++)
+    {
+        datapoints1.push({ x: i, y: (8.314 * t1)/i });
+
+    }
+    for(i=Math.pow(t1/t2, 1/(gamma-1))*v1; i<=v1; i++){
+        datapoints4.push({ x: i , y: (8.314*t1*(Math.pow(v1,(gamma - 1))))/(Math.pow(i, gamma))});
+    }
+
+    for(j=v2; j<=Math.pow(t2/t1, 1/(gamma-1))*v2; j++){
+        datapoints2.push({ x: j, y: (8.314*t2*(Math.pow(v2,(gamma - 1))))/(Math.pow(j, gamma))});
+    }
+
+    for(j=Math.pow(t1/t2, 1/(gamma-1))*v1; j<=v2; k++){
+        datapoints3.push({ x: j, y: (8.314 * t2)/j });
+    }
+
+    var data = [];
+    data.push({
+        type: "spline",
+        xValueType: "Float",
+        showInLegend: true,
+        name: "1st eqn",
+        markerSize: 1,
+        dataPoints: datapoints1
+    })
+
+    data.push({
+        type: "spline",
+        xValueType: "Float",
+        showInLegend: true,
+        name: "2nd eqn",
+        markerSize: 1,
+        dataPoints: datapoints2
+    })
+    data.push({
+        type: "spline",
+        xValueType: "Float",
+        showInLegend: true,
+        name: "3rd eqn",
+        markerSize: 1,
+        dataPoints: datapoints3
+    })
+    data.push({
+        type: "spline",
+        xValueType: "Float",
+        showInLegend: true,
+        name: "4th eqn",
+        markerSize: 1,
+        dataPoints: datapoints4
+    })
+
+    graphline("l1", data, "volume(m^3)", "pressure(kPa)");
+
+</script>
+
+</body>
+</html>

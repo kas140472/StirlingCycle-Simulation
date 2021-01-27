@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="graph.ob.js"></script>
+    <script src="graph_logx_use.ob.js"></script>
+</head>
+<body>
+    <div id="logx" style="width:500px;height:500px"></div>
+    <script>
+        var data1 = [];
+        data1.push({ x: 10, y: 10 });
+        
+        data1.push({ y: 15, x: 640 });
+        data1.push({ y: 22, x: 10240 });
+        data1.push({ y: 31, x: 80240 });
+        data1.push({ y: 42, x: 162400 });
+        data1.push({ y: 55, x: 200000 });
+        data1.push({ y: 70, x: 220000 });
+        data1.push({ y: 87, x: 230000 });
+        data1.push({ y: 100, x: 256000 });
+       graphlogx("logx",data1,"x-Axis","y-Axis");
+        
+    </script>
+</body>
+</html>
